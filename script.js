@@ -18,7 +18,7 @@
 //         Example: greet("Alice") should return "Hello, Alice!"
 
 function greet(name) {
-  // Write your code here
+return ("Hello, " + name)
 
 }
 
@@ -26,7 +26,7 @@ function greet(name) {
 // --- myFunc() — Persistent Counter ---
 // This function counts how many times it has been called.
 // It uses a global variable to remember the count between calls.
-//
+let count = 0
 // STEP 1: ABOVE this function, declare a global variable:
 //         let count = 0;
 //
@@ -38,8 +38,8 @@ function greet(name) {
 
 
 function myFunc() {
-  // Write your code here
-
+count = count+1
+return count
 }
 
 
@@ -56,8 +56,13 @@ function myFunc() {
 // STEP 3: Return the random number.
 
 function getRandomNum(max) {
-  // Write your code here
+if (isNaN(max) || max<1){
+return 0
+}
 
+  let g = Math.floor(Math.random() * max) + 1
+
+return g
 }
 
 
@@ -70,25 +75,27 @@ function getRandomNum(max) {
 
 function myAdder(x, y) {
   // Write your code here
-
+return x + y
 }
-
 
 // --- distance(x1, y1, x2, y2) ---
 // This function calculates the Euclidean distance between
 // two points (x1, y1) and (x2, y2).
 //
 // Formula: sqrt((x2 - x1)² + (y2 - y1)²)
-//
+
 // STEP 1: Calculate (x2 - x1) and square it.
+
 // STEP 2: Calculate (y2 - y1) and square it.
 // STEP 3: Add them together.
 // STEP 4: Return Math.sqrt() of the sum, rounded to 2 decimal
 //         places using .toFixed(2).
 
 function distance(x1, y1, x2, y2) {
-  // Write your code here
-
+let numb1 = (x2-x1)**2;
+let numb2 = (y2-y1)**2;
+let sum = numb2+numb1;
+return Math.sqrt(sum).toFixed(2);
 }
 
 
@@ -102,8 +109,9 @@ function distance(x1, y1, x2, y2) {
 //         Example: tipCalc(50, 20) → tip is 10, total is "60.00"
 
 function tipCalc(bill, tipPercent) {
-  // Write your code here
-
+let tip = bill*(tipPercent/100)
+let tyu = bill + tip
+return tyu.toFixed(2)
 }
 
 
